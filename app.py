@@ -1,5 +1,5 @@
 from boggle import Boggle
-from flask import Flask, render_template, session
+from flask import Flask, render_template, session, request
 
 boggle_game = Boggle()
 
@@ -14,3 +14,13 @@ def home_page():
     session['board'] = board
 
     return render_template("index.html", board=board)
+
+@app.route("/check-word")
+def check_word():
+    """Check if word is in dictionary"""
+
+    word = request.args["word"]
+    board = session["board"]
+    response = boggle_game.check_valid_word(board,word)
+    
+    return jsonify({'result': response})
