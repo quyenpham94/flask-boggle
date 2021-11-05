@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boggle</title>
+    <link rel="stylesheet" href="/static/app.css">
 </head>
 <body>
     <h1>This is home page</h1>
@@ -21,10 +22,33 @@
             </tbody>
         </table>
 
+        <p>High Score:
+            <b>{{ highscore }}</b>
+            in {{ nplays }} plays
+        </p>
+
+        <p>
+            Score: <b class="score">0</b>
+            Time Left (seconds): <b class="timer"></b>
+        </p>
         <form method="POST" class="add-word">
-            <input name="word" class="word">
+            <input name="word" class="word" >
             <button>Submit</button>
         </form>
+
+        <p class="message">
+
+        </p>
+
+        <ul class="words">
+
+        </ul>
     </section>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src="/static/boggle.js"></script>
+    <script>
+        let game = new BoggleGame("boggle", 60)
+    </script>
 </body>
 </html>

@@ -40,7 +40,7 @@ class Boggle():
         elif word_exists and not valid_word:
             result = "not-on-board"
         else:
-            result = "not-word"
+            result = "not-a-word"
 
         return result
 
