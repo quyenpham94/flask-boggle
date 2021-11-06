@@ -38,6 +38,7 @@ def post_score():
     score = request.json["score"] # sending this data as JSON when make an axios request
     highscore = session.get("highscore", 0)
     nplays = session.get("nplays", 0)
+    
     # update nplays and highscore into new json ??
     session['nplays'] = nplays + 1
     session['highscore'] = max(score, highscore)
