@@ -15,14 +15,14 @@
     padding: 1em;
   }
   
-  .msg.ok {
+  .message.ok {
     color: white;
     background-color: green;
   }
   
-  .msg.err {
+  .message.err {
     color: white;
-    background-color: tomato;
+    background-color: red;
   }
   
   
